@@ -1,4 +1,9 @@
 import matplotlib.pyplot as plt
+import numpy as np
+from utilities.input_values import DEBUG
+
+def get_perceptual_decision(firing_rate):
+    return np.argmax(firing_rate[-1,:])
 
 def ring_simulation(total_time_steps,
                     connectivity_matrix,
@@ -13,11 +18,11 @@ def ring_simulation(total_time_steps,
         for i in range(len(connectivity_matrix)):
             firing_rate[t+1][i] = firing_rate[t][i] + dt/tau_m * (-firing_rate[t][i] + max(u[i] + input_bias[i],0))
     
-    
-    fig = plt.figure(7700)
-    ax = fig.add_subplot()
-    im = ax.imshow(firing_rate, aspect='auto')
-    cbar = fig.colorbar(im)
-    plt.show()
+    if DEBUG:
+        fig = plt.figure(7700)
+        ax = fig.add_subplot()
+        im = ax.imshow(firing_rate, aspect='auto')
+        cbar = fig.colorbar(im)
+        plt.show()
 
-    return firing_rate
+    return firing_rate, get_perceptual_decision(firing_rate)

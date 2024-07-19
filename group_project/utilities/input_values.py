@@ -1,5 +1,7 @@
 import numpy as np
 
+DEBUG = False
+
 # Initialising all the variables
 
 MAX_NEURON_NUMBER = 360
