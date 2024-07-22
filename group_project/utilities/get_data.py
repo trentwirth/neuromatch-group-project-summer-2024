@@ -33,4 +33,6 @@ def get_data():
     #           and the MEAN motion direction ("prior_mean" = 225)
     df['absolute_angular_error_prior_mean'] = np.abs((df['estimate_angle'] - 225 + 180) % 360 - 180)
 
+    df = df.dropna(subset=['estimate_angle'])
+
     return df

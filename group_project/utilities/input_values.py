@@ -22,3 +22,6 @@ FIRING_RATE = np.random.rand(TOTAL_TIME_STEPS,len(THETA_NEURONS))*0.01 #initiali
 VISUAL_CUE = 225
 K_CONSTANT = 0.1
 RANDOM_BASELINE_ADJUSTMENT = 0.5
+MAX_MOTION_COHERENCE = 0.24 # 0.24 is the maximum motion coherence value in the data
+
+INITIAL_GUESS = 1.0

@@ -1,8 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from utilities.input_values import DEBUG, CONSTANT_INPUT_BIAS, K_CONSTANT, RANDOM_BASELINE_ADJUSTMENT
+from utilities.input_values import DEBUG, CONSTANT_INPUT_BIAS, MAX_MOTION_COHERENCE, RANDOM_BASELINE_ADJUSTMENT
 
-def build_stimulus_input(firing_rate: np.ndarray,
+def build_stimulus_input(k_constant: float,
+                         motion_coherence: float,
+                         firing_rate: np.ndarray,
                          init_input_bias: np.ndarray,
                          visual_cue: int = 225):
 
@@ -12,8 +14,8 @@ def build_stimulus_input(firing_rate: np.ndarray,
     input_bias = np.random.random(size=len(init_input_bias)) - RANDOM_BASELINE_ADJUSTMENT
 
     for i in range(5):
-        input_bias[visual_cue-4+i] += K_CONSTANT*(1+i)*CONSTANT_INPUT_BIAS
-        input_bias[visual_cue+i] += K_CONSTANT*(5-i)*CONSTANT_INPUT_BIAS
+        input_bias[int(visual_cue-4+i)] += (motion_coherence/MAX_MOTION_COHERENCE)*k_constant*(1+i)*CONSTANT_INPUT_BIAS
+        input_bias[int(visual_cue+i)] += (motion_coherence/MAX_MOTION_COHERENCE)*k_constant*(5-i)*CONSTANT_INPUT_BIAS
 
     if DEBUG:
         plt.figure(5500)
