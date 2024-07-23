@@ -2,22 +2,11 @@
 import pandas as pd
 import numpy as np
 import requests
+from utilities.input_values import EXPERIMENTAL_DATA_PATH
 
 def get_data():
 
-    url = "https://github.com/steevelaquitaine/projInference/raw/gh-pages/data/csv/data01_direction4priors.csv"
-    try:
-        RequestAPI = requests.get(url)
-    except requests.ConnectionError:
-        print("Failed to download data. Please contact steeve.laquitaine@epfl.ch")
-    else:
-        if RequestAPI.status_code != requests.codes.ok:
-            print("Failed to download data. Please contact steeve.laquitaine@epfl.ch")
-        else:
-            with open("data01_direction4priors.csv", "wb") as fid:
-                fid.write(RequestAPI.content)
-
-    df = pd.read_csv("data01_direction4priors.csv")
+    df = pd.read_csv(EXPERIMENTAL_DATA_PATH)
 
     # Convert cartesian coordinates to radians, then convert to degrees
     df['estimate_angle'] = np.degrees(np.arctan2(df['estimate_y'], df['estimate_x']))

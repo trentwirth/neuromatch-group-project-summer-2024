@@ -2,6 +2,8 @@ import numpy as np
 
 DEBUG = True
 
+EXPERIMENTAL_DATA_PATH = "/Users/trentonwirth/GitHub/neuromatch-group-project-summer-2024/data/data01_direction4priors.csv"
+
 # Initialising all the variables
 
 MAX_NEURON_NUMBER = 360
