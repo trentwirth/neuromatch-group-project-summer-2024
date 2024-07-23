@@ -1,6 +1,6 @@
 import numpy as np
 
-DEBUG = False
+DEBUG = True
 
 # Initialising all the variables
 
@@ -23,5 +23,7 @@ VISUAL_CUE = 225
 K_CONSTANT = 0.1
 RANDOM_BASELINE_ADJUSTMENT = 0.5
 MAX_MOTION_COHERENCE = 0.24 # 0.24 is the maximum motion coherence value in the data
+STIMULUS_BUMP_WIDTH = 10
+
 
 INITIAL_GUESS = 1.0
