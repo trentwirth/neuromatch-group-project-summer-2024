@@ -19,13 +19,13 @@ FIRING_RATE = np.random.rand(TOTAL_TIME_STEPS,len(THETA_NEURONS))*0.01 #initiali
 
 # Vars in building the visual stimulus
 VISUAL_CUE = 225
-K_CONSTANT = 0.018
+K_CONSTANT = 0.03
 RANDOM_BASELINE_ADJUSTMENT = 0.5
 MAX_MOTION_COHERENCE = 0.24 # 0.24 is the maximum motion coherence value in the data
 STIMULUS_BUMP_WIDTH = 10
 
 # Simulation information 
-SUBJECTS_LIST = [4, 7, 9, 11] 
+SUBJECTS_LIST = [11] # 4, 7, 9, 11 <- all good subject numbers. Running just 11 for now.
 
 # Variables in the optimization function
 INITIAL_GUESS = 1.0

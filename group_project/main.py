@@ -77,7 +77,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         subject_filtered_data.loc[index, "simulation_error"] = simulation_error
 
 # Save the data to a CSV file
-subject_filtered_data.to_csv("subject_filtered_data.csv", index=False)
+subject_filtered_data.to_csv("subject_11_data_simulated_k_is_030.csv", index=False)
 
 # last line here for a break point
 logging.info("SIMULATION COMPLETE")
