@@ -22,7 +22,13 @@ def build_stimulus_input(firing_rate: np.ndarray,
 
     if DEBUG:
         plt.figure(5500)
+        plt.title("Input Bias", fontsize=20)
+        plt.xlabel("Neuron Number", fontsize=16)
+        plt.ylabel("Stimulus Activity", fontsize=16)
         plt.plot(input_bias)
+        max_index = np.argmax(input_bias)
+        max_value = input_bias[max_index]
+        plt.plot(max_index, max_value, 'ro', label=f"Max Value: {max_value}, Index: {max_index}")
         plt.show()
 
     return input_bias

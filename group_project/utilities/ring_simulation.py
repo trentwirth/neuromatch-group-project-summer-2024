@@ -21,6 +21,10 @@ def ring_simulation(total_time_steps,
     if DEBUG:
         fig = plt.figure(7700)
         ax = fig.add_subplot()
+        ax.set_title("Ring Simulation", fontsize=20)
+        ax.set_xlabel("Neuron Number", fontsize=16)
+        ax.set_ylabel("Time Step", fontsize=16)
+        ax.set_ylim(100, 0)
         im = ax.imshow(firing_rate, aspect='auto')
         cbar = fig.colorbar(im)
         plt.show()

@@ -1,6 +1,6 @@
 import numpy as np
 
-DEBUG = False
+DEBUG = True
 
 # Initialising all the variables
 
